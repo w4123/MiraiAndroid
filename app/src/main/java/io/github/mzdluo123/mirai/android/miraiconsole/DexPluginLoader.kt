@@ -9,6 +9,8 @@
 
 package io.github.mzdluo123.mirai.android.miraiconsole
 
+import io.github.mzdluo123.mirai.android.BotApplication
+import io.github.mzdluo123.mirai.android.multidex.MultiDex
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ensureActive
@@ -93,7 +95,8 @@ class DexPluginLoader(val odexPath: String) :
         }.associateWith {
             // DexClassLoader(it.absolutePath,odexPath,it.path,MiraiConsole::class.java.classLoader )
             DexPluginClassLoader(it, odexPath, MiraiConsole::class.java.classLoader, classLoaders)
-        }.onEach { (_, classLoader) ->
+        }.onEach { (file, classLoader) ->
+            MultiDex.install(BotApplication.context, classLoader, file)
             classLoaders.add(classLoader)
         }.asSequence().findAllInstances().onEach {
             //logger.verbose { "Successfully initialized JvmPlugin ${loaded}." }
