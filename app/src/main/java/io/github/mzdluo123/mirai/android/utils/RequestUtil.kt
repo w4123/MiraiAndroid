@@ -21,7 +21,7 @@ object RequestUtil {
                 }
 
                 override fun onResponse(call: Call, response: Response) {
-                    continuation.resume(response.body?.string())
+                    continuation.resume(response.body()?.string())
                 }
             })
         }

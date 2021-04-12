@@ -18,7 +18,7 @@ class SafeDns : Dns {
                         .url("https://cloudflare-dns.com/dns-query?name=$hostname&type=A")
                         .header("accept", "application/dns-json").build()
                 ).execute()
-            val json = BotApplication.json.value.parseToJsonElement(res.body!!.string())
+            val json = BotApplication.json.value.parseToJsonElement(res.body()!!.string())
             return@runBlocking listOf(
                 InetAddress.getByName(
                     json.jsonObject["Answer"]?.jsonArray?.get(

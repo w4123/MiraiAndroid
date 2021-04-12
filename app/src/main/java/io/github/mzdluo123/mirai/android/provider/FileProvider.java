@@ -20,6 +20,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Locale;
 import java.util.PriorityQueue;
 import java.util.Set;
 
@@ -205,7 +206,7 @@ public class FileProvider extends DocumentsProvider {
                 Collections.addAll(pending, file.listFiles());
             } else {
                 // If it's a file and it matches, add it to the result cursor.
-                if (file.getName().toLowerCase().contains(query)) {
+                if (file.getName().toLowerCase(Locale.getDefault()).contains(query)) {
                     includeFile(result, null, file);
                 }
             }

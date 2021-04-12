@@ -6,6 +6,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Process
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.multidex.MultiDex
 import com.fanjun.keeplive.KeepLive
 import com.fanjun.keeplive.config.ForegroundNotification
 import com.fanjun.keeplive.config.KeepLiveService
@@ -30,7 +32,6 @@ class BotApplication : Application() {
         val json = lazy { Json.Default }
     }
 
-
     override fun onCreate() {
         super.onCreate()
         context = this
@@ -49,6 +50,7 @@ class BotApplication : Application() {
     //崩溃事件注册
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
+        MultiDex.install(this)
         ACRA.init(this, CoreConfigurationBuilder(this).apply {
             setBuildConfigClass(BuildConfig::class.java)
                 .setReportFormat(StringFormat.JSON)

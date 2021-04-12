@@ -21,5 +21,5 @@ suspend fun paste(text: String): String {
         ).execute()
     }
 
-    return res.request.url.toString()
+    return res.request().url().toString()
 }

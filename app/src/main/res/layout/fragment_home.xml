@@ -37,7 +37,8 @@
         android:singleLine="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/commandSend_btn"
-        app:layout_constraintStart_toEndOf="@+id/shortcutBottom_btn">
+        app:layout_constraintStart_toEndOf="@+id/shortcutBottom_btn"
+        android:inputType="text">
 
     </EditText>
 
