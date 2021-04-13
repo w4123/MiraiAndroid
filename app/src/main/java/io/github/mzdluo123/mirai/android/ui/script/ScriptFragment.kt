@@ -3,6 +3,7 @@ package io.github.mzdluo123.mirai.android.ui.script
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
@@ -107,7 +108,10 @@ class ScriptFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
         android.R.id.home -> false
         R.id.action_add_script -> {
-            startActivityForResult(Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+            startActivityForResult(Intent(
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+                Intent.ACTION_OPEN_DOCUMENT else Intent.ACTION_GET_CONTENT
+            ).apply {
                 addCategory(Intent.CATEGORY_OPENABLE)
                 type = "*/*"
             }, IMPORT_SCRIPT)

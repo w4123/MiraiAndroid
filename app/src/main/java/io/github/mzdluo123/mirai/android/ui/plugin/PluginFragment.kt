@@ -1,4 +1,4 @@
-package io.github.mzdluo123.mirai.android.ui.plugin
+    package io.github.mzdluo123.mirai.android.ui.plugin
 
 import android.app.Activity
 import android.content.Intent
@@ -77,16 +77,31 @@ class PluginFragment : Fragment() {
             return false
         }
 
-        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
-            // Filter to only show results that can be "opened", such as a
-            // file (as opposed to a list of contacts or timezones)
-            addCategory(Intent.CATEGORY_OPENABLE)
 
-            // Filter to show only images, using the image MIME data type.
-            // If one wanted to search for ogg vorbis files, the type would be "audio/ogg".
-            // To search for all documents available via installed storage providers,
-            // it would be "*/*".
-            type = "application/java-archive"
+        val intent = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                // Filter to only show results that can be "opened", such as a
+                // file (as opposed to a list of contacts or timezones)
+                addCategory(Intent.CATEGORY_OPENABLE)
+
+                // Filter to show only images, using the image MIME data type.
+                // If one wanted to search for ogg vorbis files, the type would be "audio/ogg".
+                // To search for all documents available via installed storage providers,
+                // it would be "*/*".
+                type = "application/java-archive"
+            }
+        } else {
+            Intent(Intent.ACTION_GET_CONTENT).apply {
+                // Filter to only show results that can be "opened", such as a
+                // file (as opposed to a list of contacts or timezones)
+                addCategory(Intent.CATEGORY_OPENABLE)
+
+                // Filter to show only images, using the image MIME data type.
+                // If one wanted to search for ogg vorbis files, the type would be "audio/ogg".
+                // To search for all documents available via installed storage providers,
+                // it would be "*/*".
+                type = "*/*"
+            }
         }
 
         startActivityForResult(intent, SELECT_RESULT_CODE)
