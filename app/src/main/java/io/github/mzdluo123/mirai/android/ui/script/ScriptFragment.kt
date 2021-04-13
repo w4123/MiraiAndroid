@@ -110,7 +110,7 @@ class ScriptFragment : Fragment() {
         R.id.action_add_script -> {
             startActivityForResult(Intent(
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
-                Intent.ACTION_OPEN_DOCUMENT else Intent.ACTION_GET_CONTENT
+                    Intent.ACTION_OPEN_DOCUMENT else Intent.ACTION_GET_CONTENT
             ).apply {
                 addCategory(Intent.CATEGORY_OPENABLE)
                 type = "*/*"
