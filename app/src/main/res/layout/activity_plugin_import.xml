@@ -104,6 +104,7 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:text="你要导入这个插件吗？"
@@ -117,6 +118,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:layout_marginRight="8dp"
             android:layout_marginEnd="8dp"
 
             android:text="请注意，导入未知来源的插件可能会存在未知的风险，如果你信任本插件请点击下面的按钮来完成导入"

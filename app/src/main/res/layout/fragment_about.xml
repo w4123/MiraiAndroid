@@ -66,7 +66,8 @@
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                android:gravity="center_horizontal" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -79,7 +80,8 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/github2_bth" />
+                app:layout_constraintTop_toBottomOf="@+id/github2_bth"
+                android:gravity="center_horizontal" />
 
             <Button
                 android:id="@+id/github_btn"
@@ -104,7 +106,8 @@
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/github_btn" />
+                app:layout_constraintTop_toBottomOf="@+id/github_btn"
+                android:gravity="center_horizontal" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -127,7 +130,8 @@
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                android:gravity="center_horizontal" />
 
             <Button
                 android:id="@+id/github2_bth"
@@ -162,7 +166,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView3"
-                    tools:text="版本号" />
+                    tools:text="版本号"
+                    android:gravity="center_horizontal" />
 
                 <TextView
 
@@ -174,7 +179,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView3"
-                    tools:text="版本号" />
+                    tools:text="版本号"
+                    android:gravity="center_horizontal" />
 
                 <TextView
 
@@ -186,7 +192,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView3"
-                    tools:text="版本号" />
+                    tools:text="版本号"
+                    android:gravity="center_horizontal" />
             </LinearLayout>
 
             <Button
@@ -197,7 +204,8 @@
                 android:layout_marginTop="8dp"
                 android:text="加入交流群"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/version_text" />
+                app:layout_constraintTop_toBottomOf="@+id/version_text"
+                android:layout_marginLeft="64dp" />
 
             <Button
                 android:id="@+id/btn_visit_forum"
