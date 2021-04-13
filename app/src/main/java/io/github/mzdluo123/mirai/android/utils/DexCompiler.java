@@ -1,5 +1,7 @@
 package io.github.mzdluo123.mirai.android.utils;
 
+import android.os.Build;
+
 import com.android.tools.r8.CompilationFailedException;
 import com.android.tools.r8.D8;
 import com.android.tools.r8.D8Command;
@@ -38,7 +40,7 @@ public class DexCompiler {
         D8Command.Builder command = D8Command.builder()
                 .addProgramFiles(Paths.get(jarFile.getAbsolutePath()))
                 .setOutput(Paths.get(outFile.getAbsolutePath()), OutputMode.DexIndexed)
-                .setMinApiLevel(26);
+                .setMinApiLevel(Build.VERSION.SDK_INT);
 
         if (!desugaring) {
             command.setDisableDesugaring(true);
